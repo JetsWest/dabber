@@ -3,17 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package rocketship;
+package classwork;
 
 /**
  *
- * @author Rick
+ * @author atkins4440j
  */
 public class RocketShip {
  public static void main(String[] args) {
         cone(6);
         firstLine();
-        firstSquare(6);
+        firstSquare(3);
     }
     public static void cone (int size) {
         for(int row = 1; row < size; row++){
@@ -37,13 +37,19 @@ public class RocketShip {
         System.out.println("+=*=*=*=*=*=*+");
     }
     public static void firstSquare(int dab) {
-        for(int row2 = 1; row2 < dab; row2++){
+        for(int row = dab / 2; row >  0; row--){
                 System.out.print("|");
-            for(int col2 = 0; col2 < row2; col2++){
-                System.out.print("..");
+            for(int col = 3; col > row; col--){
+                System.out.print(".");
             }
-            for(int col2 = 0; col2 < row2; col2++){
-                System.out.print("/\\");
+            for(int col = 3; col > (dab / 2) - row; col--){
+                System.out.print("\\/");
+            }
+            for(int col = 3; col > row; col--){
+                System.out.print(".");
+            }
+            for(int col = 3; col > row; col--){
+                System.out.print(".");
             }
             System.out.println();
         }
