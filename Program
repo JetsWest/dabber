@@ -1,0 +1,88 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package testerino;
+
+/**
+ *
+ * @author Rick
+ */
+public class RocketShipDrawing {
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        
+        cone(6);
+        firstLine(3);
+        topHalf(3);
+        bottomHalf(3);
+        firstLine(3);
+        bottomHalf(3);
+        topHalf(3);
+        firstLine(3);
+        cone(6);
+    }
+    public static void cone (int size) {
+        for(int row = 1; row < size; row++){
+            for(int col = 1; col < size - row; col++){
+                System.out.print(" ");
+            }
+            for(int col = 0; col < row; col++){
+                System.out.print("/");
+            }
+            System.out.print("**");
+            for(int col = 0; col < row; col++){
+                System.out.print("\\");
+            }
+            for(int col = 0; col < row; col++) {
+                System.out.print("");
+            }
+            System.out.println(" ");
+        }
+    }
+    public static void firstLine(int kerchow){
+        System.out.print("+");
+        for(int col = 1; col <= kerchow * 2; col++){
+            System.out.print("=+");
+        }
+        System.out.println("+");
+    }
+    public static void topHalf(int dab) {
+     for (int row = 1; row <= dab; row++) {
+         System.out.print("|");
+         for(int col2 = 1; col2 <= 2; col2++){
+            for(int dots = 1; dots <= dab - row; dots++){
+                System.out.print(".");
+            }
+                for(int col = 1; col <= row; col++) {
+                   System.out.print("/\\");
+            }
+                for(int dots = 1; dots <= dab - row; dots++){
+                    System.out.print(".");
+            }
+            }
+            System.out.println("|");
+         }  
+    }
+    
+    public static void bottomHalf(int dab) {
+        for(int line = dab; line >= 1; line--){
+            System.out.print("|");
+            for(int row = 1; row <= 2; row++){
+                for(int dots = 1; dots <= dab - line; dots++){
+                    System.out.print(".");
+                }
+                for(int col = 1; col <= line; col++){
+                    System.out.print("\\/");
+                }
+                for(int dots = 1; dots <= dab - line; dots++){
+                    System.out.print(".");
+                }
+            }
+            System.out.println("|");
+        }
+    }
+}
